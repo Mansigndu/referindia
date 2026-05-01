@@ -22,45 +22,7 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 font-sans antialiased">
 
-  <nav class="sticky-nav shadow-sm border-b border-gray-200 dark:border-gray-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center py-3 md:py-4">
-        <div class="flex items-center space-x-2">
-          <i class="fas fa-globe-asia text-2xl text-blue-700 dark:text-blue-400"></i>
-          <a href="index.html" class="text-2xl font-extrabold tracking-tight text-gray-800 dark:text-white">REFER<span class="text-blue-600 dark:text-blue-400">INDIA</span><span class="text-xs align-top font-normal text-gray-500 ml-0.5">™</span></a>
-        </div>
-        <div class="hidden md:flex space-x-6 text-sm font-semibold">
-          <a href="index.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">🏠 Home</a>
-          <a href="tech.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">💻 Tech</a>
-          <a href="sports.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">🏏 Sports</a>
-          <a href="business.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">📈 Business</a>
-          <a href="health.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">❤️ Health</a>
-          <a href="world.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">🌍 World</a>
-          <a href="india.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">🇮🇳 India</a>
-        </div>
-        <div class="flex items-center gap-3">
-          <div class="relative hidden sm:block">
-            <input type="text" id="search-input" placeholder="Search news..." class="w-44 lg:w-56 pl-8 pr-3 py-1.5 text-sm rounded-full border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <i class="fas fa-search absolute left-3 top-2 text-gray-400 text-xs"></i>
-          </div>
-          <button id="darkModeToggle" class="text-gray-600 dark:text-gray-300 text-xl"><i class="fas fa-moon"></i></button>
-          <button id="mobileMenuBtn" class="md:hidden text-gray-700 dark:text-white text-xl"><i class="fas fa-bars"></i></button>
-          <a href="#" id="loginMock" class="hidden md:inline-block text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded-full transition shadow-sm">Subscribe</a>
-        </div>
-      </div>
-    </div>
-    <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 px-5 py-4 flex flex-col space-y-3 shadow-lg">
-      <a href="index.html" class="mobile-cat-link font-medium">🏠 Home</a>
-      <a href="tech.html" class="mobile-cat-link">📱 Tech</a>
-      <a href="sports.html" class="mobile-cat-link">⚽ Sports</a>
-      <a href="business.html" class="mobile-cat-link">💼 Business</a>
-      <a href="health.html" class="mobile-cat-link">🩺 Health</a>
-      <a href="world.html" class="mobile-cat-link">🌏 World</a>
-      <a href="india.html" class="mobile-cat-link">🇮🇳 India</a>
-      <div class="pt-2"><input type="text" id="mobile-search" placeholder="Search..." class="w-full p-2 text-sm border rounded-lg dark:bg-gray-700"></div>
-      <a href="#" id="mobileLoginBtn" class="bg-blue-600 text-white text-center py-2 rounded-full mt-2">Get Started</a>
-    </div>
-  </nav>
+  <div id="navContainer"></div>
 
   <div class="bg-red-700 dark:bg-red-900 text-white py-2.5 overflow-hidden whitespace-nowrap border-b border-red-800">
     <div class="breaking-ticker inline-flex items-center space-x-6">
