@@ -69,7 +69,7 @@ function getNavHtml() {
         <a href="world.html" class="mobile-cat-link">🌏 World</a>
         <a href="india.html" class="mobile-cat-link">🇮🇳 India</a>
         <div class="pt-2"><input type="text" id="mobile-search" placeholder="Search..." class="w-full p-2 text-sm border rounded-lg dark:bg-gray-700"></div>
-        <a href="#" id="mobileLoginBtn" class="bg-blue-600 text-white text-center py-2 rounded-full mt-2">Get Started</a>
+        <a href="#" id="mobileLoginBtn" class="bg-blue-600 text-white text-center p-2 rounded-full mt-2">Get Started</a>
       </div>
     </nav>
   `;
