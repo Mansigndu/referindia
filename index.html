@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ReferIndia News | India's Fastest Growing News Platform</title>
+  <meta name="description" content="Latest news from India and world - Politics, Sports, Technology, Business, Health and more">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { 'sans': ['Inter', 'system-ui', 'sans-serif'] },
+          colors: { primary: '#1e3a8a', secondary: '#dc2626' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 font-sans antialiased">
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <nav class="sticky-nav shadow-sm border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-3 md:py-4">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-globe-asia text-2xl text-blue-700 dark:text-blue-400"></i>
+          <a href="index.html" class="text-2xl font-extrabold tracking-tight text-gray-800 dark:text-white">REFER<span class="text-blue-600 dark:text-blue-400">INDIA</span><span class="text-xs align-top font-normal text-gray-500 ml-0.5">™</span></a>
+        </div>
+        <div class="hidden md:flex space-x-6 text-sm font-semibold">
+          <a href="index.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">🏠 Home</a>
+          <a href="tech.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">💻 Tech</a>
+          <a href="sports.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">🏏 Sports</a>
+          <a href="business.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">📈 Business</a>
+          <a href="health.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">❤️ Health</a>
+          <a href="world.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">🌍 World</a>
+          <a href="india.html" class="cat-link hover:text-blue-600 dark:hover:text-blue-400">🇮🇳 India</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="relative hidden sm:block">
+            <input type="text" id="search-input" placeholder="Search news..." class="w-44 lg:w-56 pl-8 pr-3 py-1.5 text-sm rounded-full border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <i class="fas fa-search absolute left-3 top-2 text-gray-400 text-xs"></i>
+          </div>
+          <button id="darkModeToggle" class="text-gray-600 dark:text-gray-300 text-xl"><i class="fas fa-moon"></i></button>
+          <button id="mobileMenuBtn" class="md:hidden text-gray-700 dark:text-white text-xl"><i class="fas fa-bars"></i></button>
+          <a href="#" id="loginMock" class="hidden md:inline-block text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded-full transition shadow-sm">Subscribe</a>
+        </div>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 px-5 py-4 flex flex-col space-y-3 shadow-lg">
+      <a href="index.html" class="mobile-cat-link font-medium">🏠 Home</a>
+      <a href="tech.html" class="mobile-cat-link">📱 Tech</a>
+      <a href="sports.html" class="mobile-cat-link">⚽ Sports</a>
+      <a href="business.html" class="mobile-cat-link">💼 Business</a>
+      <a href="health.html" class="mobile-cat-link">🩺 Health</a>
+      <a href="world.html" class="mobile-cat-link">🌏 World</a>
+      <a href="india.html" class="mobile-cat-link">🇮🇳 India</a>
+      <div class="pt-2"><input type="text" id="mobile-search" placeholder="Search..." class="w-full p-2 text-sm border rounded-lg dark:bg-gray-700"></div>
+      <a href="#" id="mobileLoginBtn" class="bg-blue-600 text-white text-center py-2 rounded-full mt-2">Get Started</a>
+    </div>
+  </nav>
+
+  <div class="bg-red-700 dark:bg-red-900 text-white py-2.5 overflow-hidden whitespace-nowrap border-b border-red-800">
+    <div class="breaking-ticker inline-flex items-center space-x-6">
+      <i class="fas fa-bolt text-yellow-300 ml-4"></i>
+      <span id="breakingText">BREAKING: SAI sanctions billiards assistance | IPL 2026 playoffs thriller | Trump nominates new Surgeon General | India's G20 climate push</span>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div id="loading-spinner" class="flex justify-center py-16 hidden"><div class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div></div>
+    <div id="dynamic-content"></div>
+  </main>
+
+  <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-14 py-10">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div><h3 class="font-bold text-xl">REFERINDIA</h3><p class="text-sm text-gray-600 dark:text-gray-400 mt-2">India's most trusted digital news source. Unbiased, fast & credible journalism since 2024.</p><div class="flex space-x-3 mt-4"><i class="fab fa-twitter text-gray-500 hover:text-blue-500 cursor-pointer"></i><i class="fab fa-facebook text-gray-500 hover:text-blue-600"></i><i class="fab fa-instagram text-gray-500 hover:text-pink-500"></i><i class="fab fa-youtube text-gray-500 hover:text-red-600"></i></div></div>
+      <div><h4 class="font-semibold text-lg">Explore</h4><ul class="text-sm space-y-2 mt-2"><li>Tech & Innovation</li><li>Cricket & Sports</li><li>India Politics</li><li>World Affairs</li><li>Health & Wellness</li></ul></div>
+      <div><h4 class="font-semibold text-lg">Legal</h4><ul class="text-sm space-y-2 mt-2"><li>Privacy Policy</li><li>Terms of Use</li><li>Disclaimer</li><li>Code of Ethics</li><li>Advertise with us</li></ul></div>
+      <div><h4 class="font-semibold text-lg">📧 Morning Brief</h4><p class="text-sm">Get top 5 stories delivered daily.</p><div class="flex mt-2"><input id="footerEmail" type="email" placeholder="Your email" class="p-2 w-full text-sm border rounded-l dark:bg-gray-700"><button id="footerSubBtn" class="bg-blue-600 px-3 rounded-r text-white text-sm">Subscribe</button></div><p id="newsletterMsg" class="text-xs mt-2 text-green-600 dark:text-green-400"></p></div>
+    </div>
+    <div class="text-center text-xs text-gray-500 dark:text-gray-400 mt-10 border-t pt-6">© 2026 ReferIndia News | Designed for modern India | Empowering digital readers</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Set current page to homepage
+    window.currentPage = 'homepage';
+    loadPageContent();
+  </script>
+</body>
+</html>

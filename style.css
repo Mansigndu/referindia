@@ -1,0 +1,184 @@
+/* Custom styles for ReferIndia News - Shared across all pages */
+
+body {
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.news-card {
+  transition: transform 0.2s ease, box-shadow 0.2s;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.2);
+}
+
+.breaking-ticker {
+  animation: tickerScroll 24s linear infinite;
+  white-space: nowrap;
+  display: inline-block;
+  padding-left: 100%;
+}
+
+@keyframes tickerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+.dark .sticky-nav {
+  background-color: rgba(17, 24, 39, 0.94);
+}
+
+.ad-glow {
+  background: linear-gradient(115deg, #fef9e6 0%, #fff4e0 100%);
+  border-left: 4px solid #f59e0b;
+}
+
+.dark .ad-glow {
+  background: #2d2a1f;
+  border-left-color: #fbbf24;
+}
+
+.active-category {
+  color: #2563eb;
+  font-weight: 700;
+  border-bottom: 2px solid #2563eb;
+}
+
+.dark .active-category {
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#mobileMenu {
+  transition: all 0.3s ease;
+}
+
+#mobileMenu:not(.hidden) {
+  display: flex;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .sticky-nav .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+/* Modal animations */
+#articleModal {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Text truncation */
+.line-clamp-2 {
+  display: -webkit-box;
+  
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Loading spinner */
+.loader {
+  border-top-color: #3498db;
+  animation: spinner 0.6s linear infinite;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Grid responsiveness */
+@media (max-width: 768px) {
+  .grid-cols-1.md\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .lg\:grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Better touch targets on mobile */
+@media (max-width: 768px) {
+  button, 
+  a,
+  .cat-link,
+  .mobile-cat-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
