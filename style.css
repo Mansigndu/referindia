@@ -133,6 +133,20 @@ body {
   }
 }
 
+/* Dark mode text defaults */
+.dark {
+  color: #f8fafc;
+}
+
+.dark .text-gray-400,
+.dark .text-gray-500,
+.dark .text-gray-600,
+.dark .text-gray-700,
+.dark .text-gray-800,
+.dark .text-gray-900 {
+  color: #f8fafc !important;
+}
+
 /* Text truncation */
 .line-clamp-2 {
   display: -webkit-box;
